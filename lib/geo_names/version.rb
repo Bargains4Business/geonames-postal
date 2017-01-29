@@ -1,0 +1,3 @@
+module GeoNames
+  VERSION = "0.0.1"
+end

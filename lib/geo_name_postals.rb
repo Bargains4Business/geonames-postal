@@ -1,5 +1,5 @@
 require "geo_name_postals/engine"
-require "geo_name_postals/metadata"
+require "geo_name_postals/constants"
 
 module GeoNamePostals
 end

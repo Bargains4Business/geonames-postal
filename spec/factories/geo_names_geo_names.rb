@@ -27,6 +27,18 @@ FactoryGirl.define do
       country_name "Australia"
     end
 
+    factory :ca_postal_code do
+      country_code "CA"
+      postal_code 'T0A'
+      place_name 'Eastern Alberta (St. Paul)'
+      admin_name1 'Alberta'
+      admin_code1 'AB'
+      latitude "54.766"
+      longitude "-111.7174"
+      country_alpha3 "CAN"
+      country_name "Canada"
+    end
+
     factory :ar_postal_code do
       country_code "AR"
       postal_code '1612'

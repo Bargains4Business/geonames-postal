@@ -9,5 +9,8 @@ module GeoNames
       g.helper false
     end
 
+    rake_tasks do
+      load File.expand_path("../tasks/seed.rake", __FILE__)
+    end
   end
 end

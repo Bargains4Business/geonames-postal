@@ -7,19 +7,19 @@ require "geo_names/version"
 Gem::Specification.new do |s|
   s.name        = "geo_names"
   s.version     = GeoNames::VERSION
-  s.authors     = ["Kleber Correia"]
-  s.email       = ["klebervirgilio@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of GeoNames."
-  s.description = "TODO: Description of GeoNames."
+  s.authors     = ["Bikeroar"]
+  s.email       = ["bikeroar@bikeroar.com"]
+  s.homepage    = ""
+  s.summary     = "Summary of GeoNames."
+  s.description = "Description of GeoNames."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 4.2.7.1"
-
-  s.add_development_dependency "sqlite3"
+  s.add_dependency "rails", "~> 4.2"
+  s.add_dependency "countries"
+  s.add_dependency "jbuilder"
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'
@@ -30,10 +30,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rails'
 
   s.add_development_dependency 'thin'
-  s.add_development_dependency 'pry-doc'
+
+  s.add_development_dependency 'mysql2'
+  s.add_development_dependency 'activerecord-import'
+
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'awesome_print'
   s.add_development_dependency 'better_errors'
   s.add_development_dependency 'binding_of_caller'
   s.add_development_dependency 'hirb'
+  s.add_development_dependency 'rake'
 end

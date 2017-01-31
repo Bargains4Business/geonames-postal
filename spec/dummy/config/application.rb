@@ -8,6 +8,8 @@ require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require 'jbuilder'
+
 Bundler.require(*Rails.groups)
 require "geo_names"
 

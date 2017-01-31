@@ -1,6 +1,6 @@
-module GeoNames
+module GeoNamePostals
   class Engine < ::Rails::Engine
-    isolate_namespace GeoNames
+    isolate_namespace GeoNamePostals
 
     config.generators do |g|
       g.test_framework :rspec, fixtures: false

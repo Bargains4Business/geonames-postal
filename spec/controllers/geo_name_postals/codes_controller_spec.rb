@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-module GeoNames
-  RSpec.describe GeoNamesController, type: :controller do
-    routes { GeoNames::Engine.routes }
+module GeoNamePostals
+  RSpec.describe CodesController, type: :controller do
+    routes { GeoNamePostals::Engine.routes }
 
     describe "GET #search" do
       render_views

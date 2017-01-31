@@ -1,4 +1,4 @@
-json.array! @geo_names do |geo_name|
+json.array! @geo_name_postals do |geo_name|
   json.country_code   geo_name.country_code
   json.postal_code    geo_name.postal_code
   json.place_name     geo_name.place_name

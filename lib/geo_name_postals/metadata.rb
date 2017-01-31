@@ -1,6 +1,6 @@
-module GeoNames
+module GeoNamePostals
   module Metadata
-    # select country_name, MIN(LENGTH(postal_code)) from geo_names_geo_names group by country_code;
+    # select country_name, MIN(LENGTH(postal_code)) from geo_name_postals_geo_name_postals group by country_code;
     MINIMUN_POSTCODE_LENGHT = {
       "Andorra" => 5,
       "Argentina" => 4,

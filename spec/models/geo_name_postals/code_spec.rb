@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-module GeoNames
-  RSpec.describe GeoName, type: :model do
+module GeoNamePostals
+  RSpec.describe Code, type: :model do
     describe 'scopes' do
       describe '#ordered' do
         it 'orders geonames ascending order' do

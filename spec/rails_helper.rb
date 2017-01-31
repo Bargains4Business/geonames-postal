@@ -32,7 +32,7 @@ Dir[Rails.root.join("../factories/**/*.rb")].each { |f| load File.expand_path(f)
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include GeoNames::Engine.routes.url_helpers
+  config.include GeoNamePostals::Engine.routes.url_helpers
   config.include JsonHelper, type: :controller
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

@@ -1,6 +1,6 @@
-class CreateGeoNamesGeoNames < ActiveRecord::Migration
+class CreateGeoNamePostalsCodes < ActiveRecord::Migration
   def change
-    create_table :geo_names_geo_names do |t|
+    create_table :geo_name_postals_codes do |t|
       t.string :country_code
       t.string :postal_code
       t.string :place_name
@@ -19,9 +19,9 @@ class CreateGeoNamesGeoNames < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :geo_names_geo_names, :country_code
-    add_index :geo_names_geo_names, :country_alpha3
-    add_index :geo_names_geo_names, :country_name
-    add_index :geo_names_geo_names, :postal_code
+    add_index :geo_name_postals_codes, :country_code
+    add_index :geo_name_postals_codes, :country_alpha3
+    add_index :geo_name_postals_codes, :country_name
+    add_index :geo_name_postals_codes, :postal_code
   end
 end

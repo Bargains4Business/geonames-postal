@@ -1,5 +1,5 @@
-module GeoNames
-  class GeoNameQuery
+module GeoNamePostals
+  class CodeQuery
 
     ARGENTINA = %w[argentina ar arg].freeze
     BRAZIL    = %w[brazil br bra].freeze
@@ -12,7 +12,7 @@ module GeoNames
     end
 
     def default_query_base
-      GeoName.
+      Code.
         by_country(@country).
         ordered
     end

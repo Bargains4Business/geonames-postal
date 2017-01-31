@@ -1,3 +1,3 @@
-GeoNames::Engine.routes.draw do
-  get 'search', controller: 'geo_names', defaults: { format: 'json' }
+GeoNamePostals::Engine.routes.draw do
+  get 'search', controller: 'codes', defaults: { format: 'json' }
 end

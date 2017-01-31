@@ -1,17 +1,17 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "geo_names/version"
+require "geo_name_postals/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "geo_names"
-  s.version     = GeoNames::VERSION
+  s.name        = "geo_name_postals"
+  s.version     = GeoNamePostals::VERSION
   s.authors     = ["Bikeroar"]
   s.email       = ["bikeroar@bikeroar.com"]
   s.homepage    = ""
-  s.summary     = "Summary of GeoNames."
-  s.description = "Description of GeoNames."
+  s.summary     = "Summary of GeoNamePostals."
+  s.description = "Description of GeoNamePostals."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

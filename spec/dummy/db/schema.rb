@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20170129234456) do
 
-  create_table "geo_names_geo_names", force: :cascade do |t|
+  create_table "geo_name_postals_codes", force: :cascade do |t|
     t.string   "country_code",   limit: 255
     t.string   "postal_code",    limit: 255
     t.string   "place_name",     limit: 255
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20170129234456) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "geo_names_geo_names", ["country_alpha3"], name: "index_geo_names_geo_names_on_country_alpha3", using: :btree
-  add_index "geo_names_geo_names", ["country_code"], name: "index_geo_names_geo_names_on_country_code", using: :btree
-  add_index "geo_names_geo_names", ["country_name"], name: "index_geo_names_geo_names_on_country_name", using: :btree
-  add_index "geo_names_geo_names", ["postal_code"], name: "index_geo_names_geo_names_on_postal_code", using: :btree
+  add_index "geo_name_postals_codes", ["country_alpha3"], name: "index_geo_name_postals_codes_on_country_alpha3", using: :btree
+  add_index "geo_name_postals_codes", ["country_code"], name: "index_geo_name_postals_codes_on_country_code", using: :btree
+  add_index "geo_name_postals_codes", ["country_name"], name: "index_geo_name_postals_codes_on_country_name", using: :btree
+  add_index "geo_name_postals_codes", ["postal_code"], name: "index_geo_name_postals_codes_on_postal_code", using: :btree
 
 end

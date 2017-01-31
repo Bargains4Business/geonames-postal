@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    geo_names (0.0.1)
+    geo_name_postals (0.0.1)
       activerecord-import
       countries
       jbuilder
@@ -230,7 +230,7 @@ DEPENDENCIES
   capybara
   factory_girl_rails
   ffaker
-  geo_names!
+  geo_name_postals!
   guard-rails
   guard-rspec
   hirb

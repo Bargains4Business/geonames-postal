@@ -36,7 +36,7 @@ namespace :geo_name_postal do
             country = Country[line[:country_code]]
             import  = []
 
-            GeoNames::GeoName.new(
+            GeoNamePostals::GeoNamePostal.new(
               country_code: line[:country_code],
               postal_code: line[:postal_code],
               place_name: line[:place_name],
@@ -61,7 +61,7 @@ namespace :geo_name_postal do
 
         import.compact!
 
-        GeoNames::GeoName.import(import, on_duplicate_key_ignore: true)
+        GeoNamePostals::GeoNamePostal.import(import, on_duplicate_key_ignore: true)
         imported += batch_size
         import = []
 

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount GeoNames::Engine => "/geo_names"
+  mount GeoNamePostals::Engine => "/geo_name_postals"
 end

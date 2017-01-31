@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :geo_names_geo_name, class: 'GeoNames::GeoName' do
+  factory :code, class: 'GeoNamePostals::Code' do
     country_code "DZ"
     postal_code '13004'
     place_name 'Ramla "Ouled El Ghellis"'

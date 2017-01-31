@@ -11,7 +11,7 @@ require "sprockets/railtie"
 require 'jbuilder'
 
 Bundler.require(*Rails.groups)
-require "geo_names"
+require "geo_name_postals"
 
 module Dummy
   class Application < Rails::Application

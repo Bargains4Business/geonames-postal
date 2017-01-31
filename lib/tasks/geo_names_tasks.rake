@@ -1,4 +1,4 @@
-namespace :geo_name_postal do
+namespace :geo_name_postals do
   namespace :seed do
 
     desc "Import all postal codes from CSV_PATH"

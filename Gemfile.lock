@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     geo_names (0.0.1)
+      activerecord-import
       countries
       jbuilder
       rails (~> 4.2)

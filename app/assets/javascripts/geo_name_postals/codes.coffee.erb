@@ -33,11 +33,19 @@ class window.PostalCodes
 
     if @country_selector.val()
       @country_selector.on "change blur", =>
-        @country_selector.data('postal-code-minimun-length', PostalCodes.MINIMUN_POSTCODE_LENGTH[@country_selector.val()])
+        @country_selector.data('postal-code-minimun-length', @getCountryMinimunPostcodeLength())
+
+  getCountryAlpha2Code: ->
+    @country_selector.find(':selected').data('country-code')
+
+  getCountryMinimunPostcodeLength: ->
+    PostalCodes.MINIMUN_POSTCODE_LENGTH[@getCountryAlpha2Code()]
 
   search: ->
     @_debounce =>
-      return if @postal_code_selector.val().length < PostalCodes.MINIMUN_POSTCODE_LENGTH[@country_selector.val()]
+      return unless @country_selector.val()
+      return unless @getCountryMinimunPostcodeLength()
+      return if @postal_code_selector.val().length < @getCountryMinimunPostcodeLength()
       @_ajax().done (data)=> @callback(new PostalCodeArray(data))
 
   _data: ->

@@ -1,5 +1,5 @@
 module GeoNamePostals
-  MINIMUN_POSTCODE_LENGHT = {
+  MINIMUN_POSTCODE_LENGTH = {
     "AD" => 5,
     "AR" => 4,
     "AS" => 5,

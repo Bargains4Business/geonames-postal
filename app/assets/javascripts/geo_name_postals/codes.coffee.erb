@@ -1,0 +1,52 @@
+class window.PostalCode
+  constructor: (@postal_code)->
+  city: -> @postal_code.place_name
+  state: -> @postal_code.admin_name3 || @postal_code.admin_name2 || @postal_code.admin_name1
+  latitude: -> @postal_code.latitude
+  longitude: -> @postal_code.longitude
+  country_alpha3: -> @postal_code.country_alpha3
+  country_code: -> @postal_code.country_code
+  country_name: -> @postal_code.country_name
+
+class window.PostalCodeArray
+  constructor: (postal_codes)->
+    return $.map postal_codes, (postal_code)-> new PostalCode(postal_code)
+
+class window.PostalCodes
+  @MINIMUN_POSTCODE_LENGTH = JSON.parse('<%= GeoNamePostals::MINIMUN_POSTCODE_LENGTH.to_json %>')
+  @END_POINT = "/postal_codes"
+  @DEBOUNCE_TIME = 300
+
+  constructor: (opts = {})->
+    @country_selector     = opts.country_selector && $(opts.country_selector) || throw new Error('country selector is required')
+    @postal_code_selector = opts.postal_code_selector && $(opts.postal_code_selector) || throw new Error('postal code selector is required')
+    @callback             = opts.callback || throw new Error('callback selector is required')
+    @end_point            = opts.end_point || PostalCodes.END_POINT
+    @debounce_time        = opts.debounce_time || PostalCodes.DEBOUNCE_TIME
+
+    @attach_listeners()
+
+    @search_timeout = -1
+
+  attach_listeners: ->
+    @postal_code_selector.on "input", @search.bind(@)
+
+    if @country_selector.val()
+      @country_selector.on "change blur", =>
+        @country_selector.data('postal-code-minimun-length', PostalCodes.MINIMUN_POSTCODE_LENGTH[@country_selector.val()])
+
+  search: ->
+    @_debounce =>
+      return if @postal_code_selector.val().length < PostalCodes.MINIMUN_POSTCODE_LENGTH[@country_selector.val()]
+      @_ajax().done (data)=> @callback(new PostalCodeArray(data))
+
+  _data: ->
+    country: @country_selector.val()
+    postal_code: @postal_code_selector.val()
+
+  _ajax: ->
+    $.get("#{@end_point}/search", @_data())
+
+  _debounce: (run)->
+    clearTimeout(@search_timeout)
+    @search_timeout = setTimeout(run, PostalCodes.DEBOUNCE_TIME)

@@ -1,7 +1,7 @@
 class window.PostalCode
   constructor: (@postal_code)->
   city: -> @postal_code.place_name
-  state: -> @postal_code.admin_name3 || @postal_code.admin_name2 || @postal_code.admin_name1
+  state: -> @postal_code.admin_name1 || @postal_code.admin_name2 || @postal_code.admin_name3
   latitude: -> @postal_code.latitude
   longitude: -> @postal_code.longitude
   country_alpha3: -> @postal_code.country_alpha3

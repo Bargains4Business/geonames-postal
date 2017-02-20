@@ -20,7 +20,7 @@ class window.PostalCodes
   constructor: (opts = {})->
     @country_selector     = opts.country_selector && $(opts.country_selector) || throw new Error('country selector is required')
     @postal_code_selector = opts.postal_code_selector && $(opts.postal_code_selector) || throw new Error('postal code selector is required')
-    @callback             = opts.callback || throw new Error('callback selector is required')
+    @callback             = opts.callback || throw new Error('a callback is required')
     @end_point            = opts.end_point || PostalCodes.END_POINT
     @debounce_time        = opts.debounce_time || PostalCodes.DEBOUNCE_TIME
 
@@ -57,4 +57,4 @@ class window.PostalCodes
 
   _debounce: (run)->
     clearTimeout(@search_timeout)
-    @search_timeout = setTimeout(run, PostalCodes.DEBOUNCE_TIME)
+    @search_timeout = setTimeout(run, @debounce_time)

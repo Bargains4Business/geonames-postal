@@ -5,7 +5,7 @@ require "geo_name_postals/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "geoname-postal"
+  s.name        = "geoname-postals"
   s.version     = GeoNamePostals::VERSION
   s.authors     = ["Bikeroar"]
   s.email       = ["info@bikeroar.com"]

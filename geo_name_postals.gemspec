@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "geoname-postals"
   s.version     = GeoNamePostals::VERSION
   s.authors     = ["Bikeroar"]
-  s.email       = ["bikeroar@bikeroar.com"]
+  s.email       = ["info@bikeroar.com"]
   s.homepage    = ""
   s.summary     = "Summary of GeoNamePostals."
   s.description = "Description of GeoNamePostals."
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 4.2"
+  s.add_dependency "rails", "< 6, >= 4.2"
   s.add_dependency "countries"
   s.add_dependency "jbuilder"
   s.add_dependency "jquery-rails"

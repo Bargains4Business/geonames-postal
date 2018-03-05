@@ -69,7 +69,7 @@ namespace :geo_name_postals do
         print "imported: #{imported}\t\t\terrors: #{errors.size}\r"
       end
 
-      p errors if error.present?
+      p errors if errors.present?
     end
   end
 end

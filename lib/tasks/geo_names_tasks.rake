@@ -2,7 +2,7 @@ namespace :geo_name_postals do
   namespace :seed do
 
     desc "Import all postal codes from CSV_PATH"
-    task :load_postal_codes, [:csv_path] => [:environment] do
+    task :load_postal_codes, [:csv_path, :import_method] => [:environment] do
       require 'csv'
       require 'activerecord-import'
       require 'countries/global'
@@ -21,7 +21,10 @@ namespace :geo_name_postals do
         country_name
       ]
 
-      csv_path ||= ENV['CSV_PATH'] || abort("Please, provide the csv path")
+      csv_path      ||= ENV['CSV_PATH'] || abort('Please provide the Geonames csv path')
+      import_method ||= ENV['IMPORT_METHOD'] || :import
+
+      abort('Please provide a valid activerecord-import import method') unless GeoNamePostals::Code.respond_to?(import_method)
 
       import      = []
       errors      = Hash.new { |h, k| h[k] = [] }
@@ -59,7 +62,7 @@ namespace :geo_name_postals do
           end
         end
 
-        GeoNamePostals::Code.import(import, on_duplicate_key_ignore: true)
+        GeoNamePostals::Code.send(import_method, import, on_duplicate_key_ignore: true)
         imported += batch_size
         import = []
 
